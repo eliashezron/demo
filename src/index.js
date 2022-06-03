@@ -17,16 +17,16 @@ const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
 
 ReactDOM.render(
   <React.StrictMode>
-    <MoralisProvider appId={appId} serverUrl={serverUrl}>
+    <MoralisProvider appId="4urctmH7vk5oNRJR1RNqXReYg0cRjHhvGqGCgYda" serverUrl="https://01ob4llhuhhv.usemoralis.com:2053/server">
       <ChakraProvider theme={theme}>
         <BrowserRouter>
-          <App />
+          <App isServerInfo/>
         </BrowserRouter>
       </ChakraProvider>
     </MoralisProvider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
