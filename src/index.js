@@ -17,7 +17,7 @@ const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
 
 ReactDOM.render(
   <React.StrictMode>
-    <MoralisProvider appId="4urctmH7vk5oNRJR1RNqXReYg0cRjHhvGqGCgYda" serverUrl="https://01ob4llhuhhv.usemoralis.com:2053/server">
+    <MoralisProvider appId="fpV6gOf2DBVPelzeXHevT0gO8S0bDMa6zDmWupPm" serverUrl="https://5zenrjqoogkm.usemoralis.com:2053/server">
       <ChakraProvider theme={theme}>
         <BrowserRouter>
           <App isServerInfo/>
