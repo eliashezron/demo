@@ -12,12 +12,10 @@ const theme = extendTheme({
     initialColorMode: 'dark',
   }
 })
-const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
-const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
 
 ReactDOM.render(
   <React.StrictMode>
-    <MoralisProvider appId="fpV6gOf2DBVPelzeXHevT0gO8S0bDMa6zDmWupPm" serverUrl="https://5zenrjqoogkm.usemoralis.com:2053/server">
+    <MoralisProvider appId="VNzJriaSdN62Qn99Mxlln91xuKbhoVlA0HsEnnEy" serverUrl="https://5isiq2mqvvxj.usemoralis.com:2053/server">
       <ChakraProvider theme={theme}>
         <BrowserRouter>
           <App isServerInfo/>
