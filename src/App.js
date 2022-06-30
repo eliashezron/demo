@@ -1,8 +1,9 @@
 import { Container, Stack,Button} from "@chakra-ui/react";
 import { useMoralis,useWeb3ExecuteFunction} from "react-moralis";
 import {ErrorBox} from './components/Error'
-
+import Web3 from 'web3';
 function App() {
+  const web3 = new Web3(Web3.givenProvider)
   const abi = [  {
     "inputs": [
       {
@@ -48,23 +49,14 @@ function App() {
   const contractProcessor = useWeb3ExecuteFunction();
   async function Deposit() {
     console.log("button clicked");
-    let optionsApprove = {
-      contractAddress: "0x0bC5A7d14A530D13CabD90f1c6b719C2D484357A",
-      functionName: "approve",
-      abi: abiApprove,
-      params: {
+      const contractAddressx = "0x0bC5A7d14A530D13CabD90f1c6b719C2D484357A"
+      const abix = abiApprove
+      const params =  {
         spender: "0x470B2d6Ba304b124128c0a51b920996f06ABE426",
-        amount: 5000000000000000000000,
-      }}
-      await contractProcessor.fetch({
-        params: optionsApprove,
-        onSuccess: () => {
-          console.log("success");
-        },
-        onError: (error) => {
-          alert(error.data);
-        },
-      })
+        amount: 5000000000000000000000
+      }
+      const contractApprove = web3.eth.Contract(abix,contractAddressx )
+      contractApprove.methods.approve(params).send()
     let options = {
       contractAddress: "0x470B2d6Ba304b124128c0a51b920996f06ABE426",
       functionName: "deposit",
