@@ -15,7 +15,7 @@ const theme = extendTheme({
 
 ReactDOM.render(
   <React.StrictMode>
-    <MoralisProvider appId="u9RUMMGtBxdx3NVW2e82j5YTBIuN2h0gyE8ARRDT" serverUrl="https://gpbeytfotusl.usemoralis.com:2053/server">
+    <MoralisProvider appId="Xwn0c822Im69mCfaegmN5ORzwq1diKogh8XCfnMI" serverUrl="https://xjoxkzfjwsba.usemoralis.com:2053/server">
       <ChakraProvider theme={theme}>
         <BrowserRouter>
           <App isServerInfo/>
@@ -25,9 +25,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 )
-// api = EtbPcS47NFrQWvHteJYkLaUPAjdtXeFj
-// relayer = uU122ER5oKDTPF6T2qfmAiXhqFm49UTEzHR25fGZnqD6FXxeiSr1hTxb8MJSsqcE
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
