@@ -5,6 +5,7 @@ import m1 from "../images/m1.png"
 import bg from "../images/bg.png"
 
 const Hero=()=>{
+  
     return(
         <VStack minheight='85vh'>
         <Container maxW='md'  centerContent>
