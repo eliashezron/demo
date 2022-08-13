@@ -66,7 +66,8 @@ export const nftItems = [
     alt:'nft8',
     name:"Juba",
 
-},
+}]
+export const nftsScroll=[
 {
     id:9,
     image:nft9, 
