@@ -46,14 +46,18 @@ const NavBar=()=>{
              <ModalCloseButton />
              <ModalBody>
              <Divider orientation='horizontal' />
-                <Box maxW='sm' p='2' onClick={activateBrowserWallet}>
+                <Box maxW='sm' p='2' onClick={activateBrowserWallet}  _hover={{
+                        cursor: "pointer",
+                    }}>
                     <Flex align='center' justify='center'>
                     <Image src={metamask} alt='metamask' boxSize='50px' mr='5'/>
                     <Text>MetaMask</Text>
                     </Flex>
                 </Box>
                 <Divider orientation='horizontal' />
-                <Box maxW='sm' p='2'  onClick={onConnect}>
+                <Box maxW='sm' p='2'  onClick={onConnect}   _hover={{
+                        cursor: "pointer",
+                    }}>
                     <Flex align='center' justify='center'>
                     <Image src={WalletConnectIcon} alt='metamask' boxSize='50px' mr='5'/>
                     <Text>Wallet Connect</Text>
