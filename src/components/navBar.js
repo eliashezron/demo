@@ -1,7 +1,11 @@
-import { Button, Container, Flex,Box, Text} from "@chakra-ui/react"
+import { Button, Container, Flex,Box, Text, Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton, useDisclosure} from "@chakra-ui/react"
 import React from "react"
-import { useMoralis } from "react-moralis";
-import './navBar.css'
 import {
     useEthers,
   } from "@usedapp/core"
@@ -17,11 +21,11 @@ const NavBar=()=>{
         <Container maxW='100%' p='2% 10%' align='center' minh='15vh'>
             <Flex align='center' justify='space-between'>
             <Text>BlockBunch</Text>
-            {!isAuthenticated ? 
-            <Button colorScheme='yellow' size='lg' isLoading={isAuthenticating} onClick={onOpen}>
+            {!isConnected ? 
+            <Button colorScheme='yellow' size='lg'  onClick={onOpen}>
                 Connect Wallet
             </Button>
-            :<Box><Text color='whiteAlpha.700'>{account}</Text><Button colorScheme='yellow' size='lg' isLoading={isLoggingOut} onClick={()=>logout()}>Disconnect</Button></Box>}
+            :<Box><Text color='whiteAlpha.700'>{account}</Text><Button colorScheme='yellow' size='lg' onClick={deactivate}>Disconnect</Button></Box>}
             </Flex>
         </Container>
            <Modal isOpen={isOpen} onClose={onClose}>
@@ -30,7 +34,7 @@ const NavBar=()=>{
              <ModalHeader>Modal Title</ModalHeader>
              <ModalCloseButton />
              <ModalBody>
-               <Lorem count={2} />
+                <Text>HEy</Text>
              </ModalBody>
    
              <ModalFooter>
