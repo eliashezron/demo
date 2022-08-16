@@ -15,7 +15,7 @@ function App() {
         deactivate={deactivate}
         activateBrowserWallet={activateBrowserWallet}
       />
-      <Hero />
+      <Hero account={account} />
       <NftGrid />
     </div>
   )

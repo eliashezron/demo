@@ -10,8 +10,10 @@ import {
   InputLeftAddon,
   InputRightAddon,
   InputGroup,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Contract } from "@ethersproject/contracts"
 import m2 from "../images/m2.png"
 // import m1 from "../images/m1.png"
@@ -19,9 +21,15 @@ import bg from "../images/bg.png"
 import { useContractFunction } from "@usedapp/core"
 import { utils } from "ethers"
 
-const Hero = () => {
+const Hero = ({ account }) => {
   const [amount, setAmount] = useState(0.012)
+  const [connectWallet, setConnectWallet] = useState(false)
   const nftAddress = "0x6f6fc7D4967089b9FC054911bcec13248757d241"
+  useEffect(() => {
+    if (account) {
+      setConnectWallet(false)
+    }
+  }, [account, connectWallet])
   const abi = [
     {
       inputs: [],
@@ -42,10 +50,25 @@ const Hero = () => {
     })
   }
   const handleMint = (amount) => {
-    mintNft(amount)
+    if (!account) {
+      setConnectWallet(true)
+    } else {
+      mintNft(amount)
+    }
   }
   return (
     <VStack minheight='85vh'>
+      {connectWallet && (
+        <Alert
+          status='warning'
+          alignItems='center'
+          justifyContent='center'
+          textAlign='center'
+        >
+          <AlertIcon />
+          Connect Wallet to Mint NFTS
+        </Alert>
+      )}
       <Container maxW='md' centerContent>
         <Text fontSize='2xl' color='#D7C19A'>
           Blockchain for everyone
