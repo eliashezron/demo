@@ -16,14 +16,13 @@ import {
 } from "@chakra-ui/react"
 import WalletConnectIcon from "../images/walletconnectlogo.png"
 import metamask from "../images/metamaskWallet.png"
-import React from "react"
-import { useEthers } from "@usedapp/core"
+import React, { useEffect } from "react"
 import WalletConnectProvider from "@walletconnect/web3-provider"
 
-const NavBar = () => {
-  const { activateBrowserWallet, account, activate, deactivate } = useEthers()
+const NavBar = ({ activateBrowserWallet, account, activate, deactivate }) => {
   const isConnected = account !== undefined
   const { isOpen, onOpen, onClose } = useDisclosure()
+
   async function onConnect() {
     try {
       const provider = new WalletConnectProvider({
@@ -35,6 +34,11 @@ const NavBar = () => {
       console.error(error)
     }
   }
+  useEffect(() => {
+    if (account) {
+      onClose()
+    }
+  }, [account, onClose])
   return (
     <>
       <Container maxW='100%' p='2% 10%' align='center' minh='15vh'>
