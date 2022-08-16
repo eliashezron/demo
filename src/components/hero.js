@@ -18,18 +18,33 @@ import { Contract } from "@ethersproject/contracts"
 import m2 from "../images/m2.png"
 // import m1 from "../images/m1.png"
 import bg from "../images/bg.png"
-import { useContractFunction } from "@usedapp/core"
+import { useContractFunction, useNotifications } from "@usedapp/core"
 import { utils } from "ethers"
 
 const Hero = ({ account }) => {
+  const { notifications } = useNotifications()
   const [amount, setAmount] = useState(0.012)
   const [connectWallet, setConnectWallet] = useState(false)
+  const [transactionSuccess, settransactionSuccess] = useState(false)
   const nftAddress = "0x6f6fc7D4967089b9FC054911bcec13248757d241"
   useEffect(() => {
     if (account) {
       setConnectWallet(false)
     }
   }, [account, connectWallet])
+  useEffect(() => {
+    if (
+      notifications.filter(
+        (notification) =>
+          notification.type === "transactionSucceed" &&
+          notification.transactionName === "mintnfttransaction"
+      ).length > 0
+    ) {
+      settransactionSuccess(true)
+    } else {
+      settransactionSuccess(false)
+    }
+  }, [notifications, transactionSuccess])
   const abi = [
     {
       inputs: [],
@@ -41,7 +56,7 @@ const Hero = ({ account }) => {
   ]
   const nftInterface = new utils.Interface(abi)
   const contract = new Contract(nftAddress, nftInterface)
-  const { state, send } = useContractFunction(contract, "mint", {
+  const { state, send } = useContractFunction(contract, "Mint", {
     transactionName: "mintnfttransaction",
   })
   const mintNft = (amount) => {
@@ -50,6 +65,8 @@ const Hero = ({ account }) => {
     })
   }
   const handleMint = (amount) => {
+    console.log("clicked")
+    console.log(amount)
     if (!account) {
       setConnectWallet(true)
     } else {
@@ -67,6 +84,19 @@ const Hero = ({ account }) => {
         >
           <AlertIcon />
           Connect Wallet to Mint NFTS
+        </Alert>
+      )}
+      {transactionSuccess && (
+        <Alert
+          status='success'
+          variant='left-accent'
+          alignItems='center'
+          justifyContent='center'
+          textAlign='center'
+          autoHideDuration={5000}
+        >
+          <AlertIcon mr={3} />
+          You have successfully Minted Your Nft
         </Alert>
       )}
       <Container maxW='md' centerContent>
@@ -134,7 +164,7 @@ const Hero = ({ account }) => {
               "linear(to-t, blue.200, teal.500)",
               "linear(to-b, orange.100, purple.300)",
             ]}
-            onClick={handleMint}
+            onClick={() => handleMint(amount)}
             isLoading={state.status === "Mining"}
           >
             Mint NOW

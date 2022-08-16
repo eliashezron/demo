@@ -43,7 +43,14 @@ const NavBar = ({ activateBrowserWallet, account, activate, deactivate }) => {
     <>
       <Container maxW='100%' p='2% 10%' align='center' minh='15vh'>
         <Flex align='center' justify='space-between'>
-          <Text>BlockBunch</Text>
+          <Text
+            bgGradient='linear(to-r, green.200, pink.500)'
+            bgClip='text'
+            fontSize='5xl'
+            fontWeight='extrabold'
+          >
+            BlockBunch
+          </Text>
           {!isConnected ? (
             <Button
               colorScheme='yellow'
