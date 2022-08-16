@@ -49,9 +49,27 @@ const RoadMap = () => {
       </Stack>
       <Center pt={5}>
         <Flex gap={5}>
-          <FiTwitter size='50px' />
-          <TbBrandDiscord size='50px' />
-          <TbBrandWhatsapp size='50px' />
+          <Box>
+            <a
+              href='https://twitter.com/0Xblockbunch'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <FiTwitter size='50px' />
+            </a>
+          </Box>
+          <Box>
+            <TbBrandDiscord size='50px' />
+          </Box>
+          <Box>
+            <a
+              href='https://api.whatsapp.com/send?phone=+779177900&amp;text=Hi there! I saw this on your webApplication, i would like to inquire :)'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <TbBrandWhatsapp size='50px' />
+            </a>
+          </Box>
         </Flex>
       </Center>
     </Stack>
