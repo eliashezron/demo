@@ -39,24 +39,16 @@ const NavBar = ({ activateBrowserWallet, account, activate, deactivate }) => {
     try {
       const provider = new WalletLinkConnector({
         url: `https://mainnet.infura.io/v3/a22b6958cc5449a6a5bc6dc4e2c26a7a`,
-        appName: "Web3-react Demo",
+        appName: "DevApes Demo",
 
         supportedChainIds: [1, 3, 4, 5, 42],
       })
-      // await provider.enable()
       await activate(provider)
     } catch (error) {
       console.error(error)
     }
   }
 
-  // const CoinbaseWallet = new WalletLinkConnector({
-  //   url: `https://mainnet.infura.io/v3/a22b6958cc5449a6a5bc6dc4e2c26a7a`,
-
-  //   appName: "Web3-react Demo",
-
-  //   supportedChainIds: [1, 3, 4, 5, 42],
-  // })
   useEffect(() => {
     if (account) {
       onClose()

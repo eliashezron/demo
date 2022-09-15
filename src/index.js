@@ -5,11 +5,6 @@ import reportWebVitals from "./reportWebVitals"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { Mainnet, DAppProvider, Config, Rinkeby } from "@usedapp/core"
 import { BrowserRouter } from "react-router-dom"
-import { Web3ReactProvider } from "@web3-react/core"
-import { Web3Provider } from "@ethersproject/providers"
-function getLibrary(provider) {
-  return new Web3Provider(provider)
-}
 
 const theme = extendTheme({
   config: {
@@ -32,15 +27,13 @@ const config: Config = {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <DAppProvider config={config}>
-        <ChakraProvider theme={theme}>
-          <BrowserRouter>
-            <App isServerInfo />
-          </BrowserRouter>
-        </ChakraProvider>
-      </DAppProvider>
-    </Web3ReactProvider>
+    <DAppProvider config={config}>
+      <ChakraProvider theme={theme}>
+        <BrowserRouter>
+          <App isServerInfo />
+        </BrowserRouter>
+      </ChakraProvider>
+    </DAppProvider>
   </React.StrictMode>,
   document.getElementById("root")
 )
