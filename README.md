@@ -1,6 +1,6 @@
-# Celo Marketplace Dapp
+# Dev Apes DApp
 
-![](img/devApes.mp4)
+![](img/img.jpg)
 
 ## Description
 
