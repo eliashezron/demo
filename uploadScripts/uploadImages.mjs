@@ -14,7 +14,7 @@ for (let i = 1; i <= 12; i++) {
     new Promise(async (res, rej) => {
       const image = ipfsArray.push(
         new File(
-          [await fs.promises.readFile(`${__dirname}/images/nft${i}.png`)],
+          [await fs.promises.readFile(`${__dirname}/src/images/nft${i}.png`)],
           `${i}.png`,
           { type: "image/png" }
         )

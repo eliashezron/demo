@@ -10,7 +10,7 @@ let promises = []
 for (let i = 1; i < 12; i++) {
   promises.push(
     new Promise((res, rej) => {
-      fs.readFile(`${__dirname}/images/metadata.json`, (err, data) => {
+      fs.readFile(`${__dirname}/src/images/metadata.json`, (err, data) => {
         if (err) rej()
         let metadata = JSON.parse(data)
         ipfsArray.push({
