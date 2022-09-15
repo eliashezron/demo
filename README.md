@@ -4,50 +4,40 @@
 
 ## Description
 
-This is a GoFundMe Page built on the celo Blockchain:
+This is an NFT minting application that rewards the collectors with native [myToken](https://rinkeby.etherscan.io/address/0x8d45908176da1CF4222EaB88a5354A3AdD9a01A6). Funds raised from the sell of the nfts shall be used towards the education of more web3 developers in Uganda.
 
-- Recieves Contribution from Well Wishers;
-- Once the Amount To Be Funded is reached, The Contribute Button is De-activated;
-- Tracks the Number of People Who have Contributed;
-- You can contibute Multiple times but the funders List is only updated Once;
-- Keeps track of the Balance remaining to be contributed;
+The concept here is to distribute native tokens to the people who mint nfts. in so doing we shall also be adding value to our own tokens through distribution and adoption but also gain funds from the minting opf our NFT collection.
+UI design by [Yaroslav Hrynov](<https://www.figma.com/file/ttsBqNIpga16xFGVTzJAgv/NFT-project-(Community)?node-id=2%3A2>)
 
-The concept here is the ability to be able to keep track of the funders and once the target has been reached, the fundme won't be able to recieve any more funds. Also, the Contribute button is taken down. The Novelty is the choice for a person to be able to fund a project with any amount. nothing is too little.
+## Technologies Used
 
-## Smart Contract Functionality Added
-
-- Included a Mapping with in a struct
-- Included an Array within a Struct
-- Keeping Track of Funders
-- Included Modifiers to Check for where or Not the Project Has been Funded
-- Storage vs Memory when Using Structs, Where and When
-
-## Front End Functionality Added
-
-- Included a Modal for the Input of the amount You Intead to contribute
-- Conditional Display of the Contribute Button Depending on the Balance remaining
-- A Tag to show projects that are being Funded Against those that Are already Funded
-- Display Number of Funders
-- Center align of the GoFundMe Button
+- IPFS and File coin through [nft.storage](https://nft.storage) and [Moralis IPFS Storage](https://moralis.io/what-is-ipfs-interplanetary-file-system/)
+- [Chainlink VRF-Cordinator ](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol)
+- [CoinBase wallet](https://docs.cloud.coinbase.com/wallet-sdk/docs/initializing) connection
+- [OpenZeppelin Defender](https://defender.openzeppelin.com)
+- [useDapps](https://usedapp-docs.netlify.app/docs/)
+- [ethersjs](https://docs.ethers.io/v5/)
 
 ## TODO
 
-- beautify the layout
-- create admin pages
-- include an option for a person to live a note.
+- add Utility to the NFTS
+- create a community on the social platforms
+- beautify the site
 
 ## Live Demo
 
-Checkout the Live Demo Of the Project Hear [GoFundMe](https://eliashezron.github.io/celoGoFundMe/)
+Checkout the Live Demo Of the Project Hear [DevApes](https://still-sound-3479.on.fleek.co/)
 
 ## Usage
 
 ### Requirements
 
-1. Install the Metamask wallet
+1. Install the Metamask wallet, coinBase wallet
 2. Create a wallet.
-3. Go to [https://celo.org/developers/faucet](https://celo.org/developers/faucet) and get tokens for the alfajores testnet.
-4. Switch to the alfajores testnet in the Metamask.
+3. get some [Rinkeby Faucet](https://rinkebyfaucet.com/) and get tokens for the alfajores testnet.
+4. Mint your NFT
+5. Add [MyTokenAddress] (https://rinkeby.etherscan.io/address/0x8d45908176da1CF4222EaB88a5354A3AdD9a01A6)to your Tokens
+6. You should recieve an airdrop of 10 [MyTokens] (https://rinkeby.etherscan.io/address/0x8d45908176da1CF4222EaB88a5354A3AdD9a01A6)
 
 # Getting Started with Create React App
 
