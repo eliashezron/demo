@@ -36,8 +36,8 @@ Checkout the Live Demo Of the Project Hear [DevApes](https://still-sound-3479.on
 2. Create a wallet.
 3. get some [Rinkeby Faucet](https://rinkebyfaucet.com/) and get tokens for the alfajores testnet.
 4. Mint your NFT
-5. Add [MyTokenAddress] (https://rinkeby.etherscan.io/address/0x8d45908176da1CF4222EaB88a5354A3AdD9a01A6)to your Tokens
-6. You should recieve an airdrop of 10 [MyTokens] (https://rinkeby.etherscan.io/address/0x8d45908176da1CF4222EaB88a5354A3AdD9a01A6)
+5. Add [MyTokenAddress](https://rinkeby.etherscan.io/address/0x8d45908176da1CF4222EaB88a5354A3AdD9a01A6)to your Tokens
+6. You should recieve an airdrop of 10 [MyTokens](https://rinkeby.etherscan.io/address/0x8d45908176da1CF4222EaB88a5354A3AdD9a01A6)
 
 # Getting Started with Create React App
 
