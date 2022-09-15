@@ -43,7 +43,7 @@ const NavBar = ({ activateBrowserWallet, account, activate, deactivate }) => {
 
         supportedChainIds: [1, 3, 4, 5, 42],
       })
-      await provider.enable()
+      // await provider.enable()
       await activate(provider)
     } catch (error) {
       console.error(error)
