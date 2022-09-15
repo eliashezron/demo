@@ -16,9 +16,10 @@ import {
 } from "@chakra-ui/react"
 import WalletConnectIcon from "../images/walletconnectlogo.png"
 import metamask from "../images/metamaskWallet.png"
+import coinbase from "../images/coinbase.png"
 import React, { useEffect } from "react"
 import WalletConnectProvider from "@walletconnect/web3-provider"
-
+import { WalletLinkConnector } from "@web3-react/walletlink-connector"
 const NavBar = ({ activateBrowserWallet, account, activate, deactivate }) => {
   const isConnected = account !== undefined
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -34,6 +35,28 @@ const NavBar = ({ activateBrowserWallet, account, activate, deactivate }) => {
       console.error(error)
     }
   }
+  async function onCoinbaseConnect() {
+    try {
+      const provider = new WalletLinkConnector({
+        url: `https://mainnet.infura.io/v3/a22b6958cc5449a6a5bc6dc4e2c26a7a`,
+        appName: "Web3-react Demo",
+
+        supportedChainIds: [1, 3, 4, 5, 42],
+      })
+      await provider.enable()
+      await activate(provider)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  // const CoinbaseWallet = new WalletLinkConnector({
+  //   url: `https://mainnet.infura.io/v3/a22b6958cc5449a6a5bc6dc4e2c26a7a`,
+
+  //   appName: "Web3-react Demo",
+
+  //   supportedChainIds: [1, 3, 4, 5, 42],
+  // })
   useEffect(() => {
     if (account) {
       onClose()
@@ -115,6 +138,20 @@ const NavBar = ({ activateBrowserWallet, account, activate, deactivate }) => {
                   mr='5'
                 />
                 <Text>Wallet Connect</Text>
+              </Flex>
+            </Box>
+            <Divider orientation='horizontal' />
+            <Box
+              maxW='sm'
+              p='2'
+              onClick={onCoinbaseConnect}
+              _hover={{
+                cursor: "pointer",
+              }}
+            >
+              <Flex align='center' justify='center'>
+                <Image src={coinbase} alt='metamask' boxSize='50px' mr='5' />
+                <Text>coinbase</Text>
               </Flex>
             </Box>
             <Divider orientation='horizontal' />
