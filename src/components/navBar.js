@@ -167,3 +167,4 @@ export const getEllipsisTxt = (str, n = 6) => {
   return ""
 }
 export default NavBar
+// reuse pop up module
