@@ -1,5 +1,7 @@
 # Dev Apes DApp
-
+---
+### winner ethSafari Hackathon (coinbase and IPFS pool Prize)
+---
 ![](img/img.jpg)
 
 ## Description
